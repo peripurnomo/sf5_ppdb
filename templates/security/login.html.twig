@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ __app_name__ }} - SignIn
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12">
+            <h3 class="blue-text center-align">{{ __app_name__ }} SignIn</h3>
+
+            <form action="{{ path('app_login') }}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        {% if error %}
+                            <div class="red-text">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="inputUsername">Username</label>
+                        <input class="validate" type="text" value="{{ last_username }}" name="username" id="inputUsername" required autofocus>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="inputPassword">Password</label>
+                        <input class="validate" type="password" name="password" id="inputPassword" required autocomplete="off">
+                    </div>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                        	<input type="checkbox" name="_remember_me" id="indeterminate-checkbox">
+                        	<span>Keep me logged in</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col s12">
+                        <button class="btn blue col s12" type="submit">SignIn</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col s12 center-align">
+                    <p>Don't have account ? <a href="{{ path('app_register') }}">SignUp.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ app.user.firstname |title~ ' ' ~ app.user.lastname|title }} - Profile
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{# <div class="col s12">
+			{{ render(controller('App\\Controller\\PostController::form')) }}
+		</div> #}
+
+		<div class="col s12">
+			<ul class="collection">
+				<li class="collection-item">
+					<span>
+						Name : {{ app.user.firstname ~ ' ' ~ app.user.lastname}}
+					</span>
+				</li>
+
+				<li class="collection-item">
+					<span>
+						Username : {{ app.user.username }}
+					</span>
+				</li>
+
+				<li class="collection-item">
+					<span>
+						E-mail : {{ app.user.email }}
+					</span>
+				</li>
+			</ul>
+		</div>		
+	</div>
+{% endblock %}

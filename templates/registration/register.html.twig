@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ __app_name__ }} - SignUp
+{% endblock %}
+
+{% block body %}
+  <div class="row">
+	  	<div class="col s12">
+				<h3 class="blue-text center-align">{{ __app_name__ }} SignUp</h3>
+
+				{{ form_start(form) }}
+    			<div class="row red-text">
+    				<div class="col s12">
+    					{{ form_errors(form) }}
+    				</div>
+    			</div>
+
+		  		<div class="row">
+						{{ form_row(form.firstname) }}
+						{{ form_row(form.lastname) }}
+		  		</div>
+
+		  		<div class="row">
+	  				{{ form_row(form.username) }}
+		  		</div>
+
+		  		<div class="row">
+		  			{{ form_row(form.email) }}
+		  		</div>
+
+		  		<div class="row">
+	  				{{ form_row(form.password) }}
+		  		</div>
+    			
+    			<div class="row">
+              <div class="col s12">
+    						<button class="btn col s12 blue" type="submit">SignUp</button>
+    					</div>
+    				</div>
+    			</div>	
+				{{ form_end(form) }}
+
+				<div class="row">
+					<div class="col s12 center-align">
+						<p>Already have account ? <a href="{{ path('app_login') }}"> SignIn.</a></p>
+					</div>
+				</div>
+	  	</div>
+  </div>
+{% endblock %}

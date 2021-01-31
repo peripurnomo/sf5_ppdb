@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}
+        {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+    		{% block navbar %}
+    			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <nav class="blue">
+                        <div class="container nav-wrapper">
+                          <a href="{{ path('app_home') }}" class="brand-logo">{{ __app_name__ }}</a>
+                          <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="{{ path('app_home') }}">Home</a></li>
+                            <li><a href="{{ path('app_profile') }}">Profile</a></li>
+                            <li><a href="{{ path('app_new_post') }}">New post</a></li>
+                            <li><a href="{{ path('app_change_password') }}">Change password</a></li>
+                            <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                          </ul>
+                        </div>
+                    </nav>
+                {% endif %}
+    		{% endblock %}
+        </header>
+        
+        <main class="container">
+            <div class="row">
+                <div class="col s12">
+                    {% block feedbacks %}
+                        {% for messages in app.flashes(['Success', 'Warning']) %}
+                            {% for message in messages %}
+                                <div>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+            </div>
+            
+            {% block body %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+    <div class="row red-text">
+        <div class="col s12">
+            {{ form_errors(form) }}
+        </div>
+    </div>
+
+    <div class="row">
+    	{{ form_row(form.title) }}
+    </div>
+
+    <div class="row">
+    	{{ form_row(form.body) }}
+    </div>
+
+    <div class="row">
+    	<div class="col s12">
+	    	<button class="col s12 blue btn">{{ button_label|default('Publish') }}</button>
+    	</div>
+    </div>
+{{ form_end(form) }}

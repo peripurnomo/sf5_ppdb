@@ -1,0 +1,4 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    # uncomment baris di bawah untuk menggunakan form ala bootstrap
+    # form_themes: ['bootstrap_4_layout.html.twig']
