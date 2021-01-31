@@ -1,2 +1,14 @@
 # sf5_crud
- simple crud app + login register using symfony 5
+Basic feature:
+- login
+- register
+- remember me
+- logout
+- change password
+- create new post
+- display post
+- edit post
+- delete post
+- etc
+
+Update soon :)
