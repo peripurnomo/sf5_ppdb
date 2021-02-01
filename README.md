@@ -1,14 +1,18 @@
-# sf5_crud
-  Basic feature:
-  - login
-  - register
-  - remember me
-  - logout
-  - change password
-  - create new post
-  - display post
-  - edit post
-  - delete post
-  - etc
+# sf5_crud - will be updated soon :)
+  # Basic feature:
+    - login
+    - register
+    - remember me
+    - logout
+    - change password
+    - create new post
+    - display post
+    - edit post
+    - delete post
+    - etc
 
-will be updated soon :)
+  # Upcoming feature
+    - search posts
+    - search users
+    - edit profile
+    - delete account
