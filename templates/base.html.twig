@@ -31,7 +31,7 @@
     		{% endblock %}
         </header>
         
-        <main class="container">
+        <main class="container" id="content">
             <div class="row">
                 <div class="col s12">
                     {% block feedbacks %}
@@ -45,9 +45,48 @@
                     {% endblock %}
                 </div>
             </div>
-            
             {% block body %}
             {% endblock %}
         </main>
+
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <footer class="page-footer">
+                <div class="container">
+                  <div class="row">
+                    <div class="col l6 s12">
+                      <h5 class="white-text">About CrudApp</h5>
+
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsum, inventore cumque unde est incidunt natus doloribus sed hic, harum dolorum! Perspiciatis nostrum sequi sed quis eos ab in aut!</p>
+                    </div>
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Settings</h5>
+
+                      <ul>
+                        <li><a class="white-text" href="{{ path('app_change_password') }}">Change password</a></li>
+                        <li><a class="white-text" href="{{ path('app_new_post') }}">Create new post</a></li>
+                        <li><a class="white-text" href="#content">Back to top</a></li>
+                        <li><a class="white-text" href="{{ path('app_change_password') }}">Logout</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Connect</h5>
+                      <ul>
+                        <li><a class="white-text" href="https://web.facebook.com/MyNameIsPeriPurnomo">Facebook</a></li>
+                        <li><a class="white-text" href="https://linkedin.com/in/peri-purnomo">LinkedIn</a></li>
+                        <li><a class="white-text" href="https://github.com/peripurnomo">GitHub</a></li>
+                        <li><a class="white-text" href="#!">Twitter</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-copyright">
+                  <div class="container">
+                  Made with by <a class="blue-text text-lighten-3" href="https://github.com/peripurnomo">&copy; Peri Purnomo</a>
+                  </div>
+                </div>
+            </footer>
+        {% endif %}
     </body>
 </html>

@@ -13,8 +13,6 @@ import 'jquery/dist/jquery.min.js';
 import 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 
-// jquery belum di import - belum di butuhkan
-
 // start the Stimulus application
 import './bootstrap';
 
