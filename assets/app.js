@@ -9,8 +9,9 @@
 import './styles/app.css';
 
 // impor satu-satu aja
-import 'materialize-css/dist/css/materialize.min.css';
+import 'jquery/dist/jquery.min.js';
 import 'materialize-css/dist/js/materialize.min.js';
+import 'materialize-css/dist/css/materialize.min.css';
 
 // jquery belum di import - belum di butuhkan
 
