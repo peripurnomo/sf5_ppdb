@@ -9,7 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController extends AbstractController
+/**
+ * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
+ */
+final class HomeController extends AbstractController
 {
     private $postRepo;
 
@@ -20,7 +23,6 @@ class HomeController extends AbstractController
 	  
     /**
      * @Route("/", name="app_home", methods={"GET"})
- 	 * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
      */
     public function home(Request $request): Response
     {

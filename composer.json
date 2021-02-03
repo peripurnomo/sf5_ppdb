@@ -1,5 +1,7 @@
 {
     "type": "project",
+    "name": "symfony5/crudapp",
+    "description": "simple symfony 5 crud application",
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -93,7 +95,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "5.2.*"
         }
     }

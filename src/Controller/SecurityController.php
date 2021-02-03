@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class SecurityController extends AbstractController
+final class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login", methods={"GET", "POST"})
@@ -36,6 +36,7 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/logout", name="app_logout", methods={"GET"})
+     * @Security("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      */
     public function logout()
     {

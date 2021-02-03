@@ -9,11 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ProfileController extends AbstractController
+/**
+ * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
+ */
+final class ProfileController extends AbstractController
 {
     /**
      * @Route("/profile", name="app_profile", methods={"GET"})
-     * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
      */
     public function profile(Request $request): Response
     {

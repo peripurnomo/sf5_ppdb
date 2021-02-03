@@ -8,12 +8,14 @@ use App\Form\PostType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/post")
+ * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
  */
-class PostController extends AbstractController
+final class PostController extends AbstractController
 {
     /**
      * @Route("/new", name="app_new_post", methods={"GET","POST"})
@@ -41,7 +43,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/edit/{id}", name="app_edit_post", methods={"GET","POST"})
+     * @Route("/edit/{id<\d+>}", name="app_edit_post", methods={"GET","POST"})
      */
     public function edit(Request $request, Post $post): Response
     {
@@ -61,7 +63,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="app_delete_post", methods={"DELETE"})
+     * @Route("/delete/{id<\d+>}", name="app_delete_post", methods={"DELETE"})
      */
     public function delete(Request $request, Post $post): Response
     {

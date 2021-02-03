@@ -1,0 +1,17 @@
+<header>
+	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <nav class="blue">
+            <div class="container nav-wrapper">
+              <a href="{{ path('app_home') }}" class="brand-logo">{{ __app_name__ }}</a>
+              <a href="#" class="sidenav-trigger" data-target="nav-mobile">&#9776;</a>
+              <ul class="topnav right hide-on-med-and-down">
+                <li><a href="{{ path('app_home') }}">Home</a></li>
+                <li><a href="{{ path('app_profile') }}">Profile</a></li>
+                <li><a href="{{ path('app_new_post') }}">New post</a></li>
+                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+              </ul>
+              <ul class="sidenav" id="nav-mobile"></ul>
+            </div>
+        </nav>
+    {% endif %}
+</header>
