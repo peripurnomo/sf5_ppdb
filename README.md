@@ -12,6 +12,7 @@
     - etc
 
   # Upcoming feature
+    - reset password
     - search posts
     - search users
     - edit profile
